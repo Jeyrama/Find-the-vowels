@@ -19,8 +19,8 @@ Notes:
 // Solution
 
 function vowelIndices(word) {
-  var arr = [];
-  for(var i = 0; i < word.length; i++) {
+  let arr = [];
+  for(let i = 0; i < word.length; i++) {
     if(/[aeioyu]/i.test(word[i])) {
       arr.push(i+1);
     }
@@ -29,3 +29,15 @@ function vowelIndices(word) {
 }
 
 // or
+
+function vowelIndices(word) {
+  const str = 'aeiouy';
+  const arr = word.toLowerCase().split('');
+  let answer = [];
+  arr.forEach((name, i) => {
+    if (str.indexOf(name) !== -1) {
+      answer.push(i + 1);
+    }
+  });
+  return answer;
+}
